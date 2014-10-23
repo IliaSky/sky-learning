@@ -1,0 +1,383 @@
+/*============================ __MAIN__ ============================*/
+
+#wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(/img/bg.jpg);
+  color: #ccc;
+  font-family: consolas;
+  xfont-family: tahoma;
+}
+
+h1 {
+  margin: 12px;
+  text-shadow: 1px 1px #777;
+}
+h2 {
+  text-align:center;
+}
+
+header {
+  text-align: center;
+}
+
+#main > header {
+  background: #333;
+}
+
+#container{
+  padding: 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+.user{
+  width: 128px;
+  height: 128px;
+  position: relative;
+  border-radius: 10px;
+  margin: 10px;
+  overflow: hidden;
+}
+img[src^="/avatar"]{
+  width: 100%;
+  height: 100%;
+  background: #222;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.user span{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  text-align:center;
+}
+li{
+  display:inline-block;
+}
+/*============================ __NAVIGATION__ ============================*/
+
+nav a {
+  background: #222;
+  color: #bbc;
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+nav a:hover {
+  background: #444;
+}
+#logo-container, #welcome, #top-navi {
+  display: inline-block;
+}
+#top-navi {
+  float:right;
+  margin: 7px;
+}
+#logo-container {
+  float:left;
+}
+#logo {
+  height:50px;
+}
+
+#main-navi {
+  display: table;
+  width:100%;
+}
+#main-navi a{
+  display: table-cell;
+  width:10%;
+  box-sizing:border-box;
+  box-shadow: 0 0 10px 2px #000 inset;
+}
+time{
+  float: right;
+}
+a{
+  color:#eee;
+}
+#status{
+  display: none;
+}
+
+/*============================ __FORMS__ ============================*/
+form {
+  text-align: center;
+}
+
+form input,form textarea {
+  border-radius: 7px;
+  outline: none;
+}
+
+form input:focus,form textarea:focus {
+  box-shadow: 0 0 5px 2px #68f;
+}
+
+form label, form input, form button, form textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+label{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: capitalize;
+}
+input, textarea{
+  xbackground: url(http://www.psdgraphics.com/file/metal-texture.jpg);
+  xbackground:url(http://www.proshaper.com/wp-content/uploads/2013/06/metal_background_by_homers85-d53bo7t.jpg); ;
+  xbackground :rgba(120,120,120,0.8);
+  xborder-color: lightgray;
+  xcolor:#333;
+}
+textarea{
+  padding: 5px;
+  border-radius: 5px;
+  xwidth:500px;
+  xheight: 200px;
+}
+form[id^="add-"] input, form[id^="add-"] textarea{
+  width: 400px;
+  margin: 5px auto;
+}
+button[id^="add-"]{
+  margin: 5px auto;
+  display: block;
+}
+#container > ul:not(#users):not(#team):not(#profile) > li {
+  margin:10px auto;
+  border:1px solid gray;
+  background: rgba(20,20,20,0.5);
+  width:100%;
+  padding: 10px;
+  box-sizing:border-box;
+  box-shadow: 1px 1px;
+  border-radius: 10px;
+}
+#tasks a{
+  display: block;
+}
+/*
+
+#container > ul {
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+}
+*/
+/*============================ __PROFILE__ ============================*/
+#profile {
+  text-align:center;
+}
+#profile li {
+  display: block;
+}
+.avatar-edit {
+    width: 128px;
+    height: 128px;
+    position: relative;
+    margin: auto;
+    border:1px solid gray;
+    background: url("/img/NoAvatar.png")
+}
+.avatar-edit:hover:before {
+    content: 'click to edit';
+    display: block;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+    position: relative;
+}
+.avatar-edit canvas,.avatar-edit input{
+    left:0;
+    top:0;
+    width: 128px;
+    height: 128px;
+    position: absolute;
+}
+.avatar-edit input{
+    z-index: 2;
+    opacity: 0;
+}
+/*============================ __PAGES__ ============================*/
+#lectures{
+  text-align:center;
+}
+#lectures a {
+  display: inline-block;
+  width: 80%;
+  margin: 5px;
+}
+.post {
+  display: table;
+  width: 100%;
+}
+.post > * {
+  display: table-cell;
+}
+.content{
+  padding:10px;
+}
+#news li{
+  margin: 10px;
+}
+#topics{
+  display: table;
+  width: 100%;
+}
+.topic{
+  display: table-row;
+}
+.topic > * {
+  display: table-cell;
+  vertical-align: middle;
+  height: 64px;
+}
+.topic .user{
+  width: 64px;
+  height: 64px;
+}
+#tool {
+  text-align:center;
+}
+#tool button {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #333;
+  color: #eee;
+  border-color: #000;
+  box-shadow: 0 0 6px #666 inset;
+}
+
+#tool button:hover {
+  background: #444;
+  cursor: pointer;
+  box-shadow: 0 0 6px #777 inset, 0 0 1px 2px #000 inset;
+}
+#board {
+  background: white;
+  position: relative;
+  left: 0;
+  top:0;
+}
+#tool {
+  position: relative;
+  margin: 0 auto;
+  width: 800px;
+}
+#controls {
+  border-radius: 20px;
+}
+#controls button, #clear {
+  position: relative;
+  z-index: 2;
+}
+#clear {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  color:#ccc;
+  box-shadow: 0 -1px 1px 1px inset;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgba(0,0,0,0.5);
+}
+#clear:hover:after{
+  content: "Clear the board"
+}
+#clear:hover:first-letter{
+  font-size: 0;
+}
+#board-container{
+  position: relative;
+}
+#board:hover {
+  cursor: crosshair;
+}
+#temp *{
+  position: absolute;
+  z-index: 3;
+  opacity: 0.7;
+}
+#temp canvas{
+  background: rgba(111,111,111,0.12);
+}
+#controls label, #controls button{
+  display: inline-block;
+  margin: 5px;
+  vertical-align: middle;
+}
+#controls .selected, #controls :focus{
+  box-shadow: 0 0 1px 2px #000 inset;
+  border-color: royalblue;
+  outline: none;
+}
+#images {
+  width: auto;
+  margin: auto;
+  box-shadow: 0 0 2px 3px inset;
+  background: rgba(0,0,0,0.5);
+}
+#images img {
+  width: 96px;
+  height: 96px;
+}
+#teamviewer{
+  width: 100%;
+  height: 600px;
+}
+#fullscreen {
+  position: absolute;
+  top:100px;
+  right: 10px;
+  padding: 5px;
+}
+
+/*============================ __SCROLLBAR__ ============================*/
+
+::-webkit-scrollbar-track:horizontal {
+  -webkit-box-shadow: inset 1px 5px 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-track:vertical {
+  -webkit-box-shadow: inset 4px 1px 8px 1px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-corner {
+  -webkit-box-shadow: inset 1px 5px 6px rgba(0,0,0,0.3);
+  background-color: #222;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color:rgba(99,99,99,0.7);
+  border: 1px solid #1d1d1d;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  -webkit-box-shadow: inset 0 7px 1px -5px rgba(255,255,255,0.3);
+}
+::-webkit-scrollbar-thumb:vertical {
+  -webkit-box-shadow: inset 3px 0 5px 0 rgba(255,255,255,0.3);
+}
+::-webkit-scrollbar {
+  width:12px;
+  height: 12px;
+  background-color: transparent;
+}
