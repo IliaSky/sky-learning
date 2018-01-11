@@ -501,7 +501,7 @@
   function onAuthSubmit(url){
     return function (){
       var user = {username: value('username'), password: value('password')};
-      authenticate(url, user, value('remember'));
+      authenticate(url, user, url == 'register' ? '' : value('remember'));
       return false;
     }
   }
