@@ -56,7 +56,7 @@ require('http').createServer(
       res.setHeader 'Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'
       next();
     )
-    .use(connect.static 'public')
+    .use(connect.static 'client')
     .use(connect.logger 'dev')
     .use(connect.cookieParser())
     .use(connect.session secret: 'sasa_matic', saveUninitialized: true, resave: true)

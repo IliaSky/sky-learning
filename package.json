@@ -13,7 +13,7 @@
   },
   "scripts": {
     "prestart": "start mongod --dbpath db",
-    "start": "coffee server.coffee",
+    "start": "coffee server/server.coffee",
     "stop": "mongo admin --eval \"db.shutdownServer()\""
   },
   "dependencies": {
