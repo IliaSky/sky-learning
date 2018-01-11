@@ -1,6 +1,15 @@
 # require 'coffee-script/register'
 require 'colors'
-connect = require('connect')
+connect2 = require('connect')
+bodyParser = require('body-parser')
+connect = {
+  static: require('serve-static'),
+  logger: require('morgan'),
+  cookieParser: require('cookie-parser'),
+  session: require('express-session'),
+  urlencoded: bodyParser.urlencoded,
+  json: bodyParser.json
+}
 db      = require('./db')
 utils   = require('./utils')
 routes  = utils.deepExtend require('./resources').getRoutes(), require('./actions')
@@ -41,7 +50,7 @@ handleRequest = (req, res) ->
 process.on 'uncaughtException', (err) -> log(err.stack)
 
 require('http').createServer(
-  connect()
+  connect2()
     .use((req, res, next)->
       res.setHeader 'Access-Control-Allow-Origin', '*'
       res.setHeader 'Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'
@@ -50,8 +59,8 @@ require('http').createServer(
     .use(connect.static 'public')
     .use(connect.logger 'dev')
     .use(connect.cookieParser())
-    .use(connect.session secret: 'sasa_matic')
-    .use(connect.urlencoded())
+    .use(connect.session secret: 'sasa_matic', saveUninitialized: true, resave: true)
+    .use(connect.urlencoded extended: true)
     .use(connect.json())
     .use (req, res) ->
       try

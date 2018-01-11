@@ -7,7 +7,7 @@ fs = require('fs')
 _id = (x) -> if typeof x is 'string' then ObjectID(x) else x
 id  = (x) -> _id: _id(x._id)
 
-db = require('mongojs').connect('localhost/learning', ['announcements', 'lectures', 'tasks', 'topics', 'users', 'meetings'])
+db = require('mongojs')('localhost/learning', ['announcements', 'lectures', 'tasks', 'topics', 'users', 'meetings'])
 
 schema =
   user:         {'username', 'password', 'avatar'}
@@ -62,8 +62,8 @@ all = (category) -> (data, cb) ->
   db[category].find(data, filters[category] or {}).sort created_at: -1 , cb
 
 one = (category) -> (data, cb) ->
-  data = id(data) if data.hasOwnProperty('_id')
-  db[category].findOne data, {_id:0}, cb
+  data = id(data) if data._id?
+  db[category].findOne data, cb
 
 those = (category) -> where: (data) -> (_, cb) ->
   all(category)(data, cb)
