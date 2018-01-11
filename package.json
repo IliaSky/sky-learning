@@ -1,0 +1,29 @@
+{
+  "name": "sky-learning",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ilia Yatchev"
+  },
+  "description": "A moodle alternative for a single university course",
+  "homepage": "https://github.com/IliaSky/sky-learning#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IliaSky/sky-learning.git"
+  },
+  "scripts": {
+    "prestart": "start mongod --dbpath db",
+    "start": "coffee server.coffee",
+    "stop": "mongo admin --eval \"db.shutdownServer()\""
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "colors": "^1.1.2",
+    "connect": "^3.6.5",
+    "cookie-parser": "^1.4.3",
+    "express-session": "^1.15.6",
+    "mongojs": "^2.4.1",
+    "morgan": "^1.9.0",
+    "serve-static": "^1.13.1"
+  }
+}
