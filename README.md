@@ -6,25 +6,40 @@
 - mongodb
 - node
 
-##Usage:
+## Usage:
 
-  1. __Terminal__:
+1. __Setup dependencies__:
 
-        sudo apt-get install node
-        sudo apt-get install mongo
-        npm install -g coffee-script
-        mongod --dbpath PATH_TO_DATABASE_DIR
+   - Terminal:
 
-  2. __New Terminal__:
+         choco install node
+         choco install mongo
+         npm install -g coffee-script
+         npm install
 
-        mongo
-        use learning
-        db.users.insert({"username" : "your_admin", "password" : "your_admin_password", "admin" : 1 })
-        db.meetings.insert({_id:ObjectId("000000000000000000000000")})
-        exit
+   - *You can replace `choco` (Win) with `brew` (Mac) or `sudo apt-get` (Linux) depending on your OS.
 
-        coffee server.coffee
+2. __Setup DB__:
 
-  3. __Browser__:
+   - Terminal 1:
 
-        http://localhost:8080/
+         mkdir db
+         mongod --dbpath db
+
+   - Terminal 2:
+
+         mongo
+         use learning
+         db.users.insert({"username" : "your_admin", "password" : "your_admin_password", "admin" : 1 })
+         db.meetings.insert({_id: ObjectId("000000000000000000000000")})
+         exit
+
+3. __Enjoy__:
+
+   - Terminal:
+
+         npm start
+
+   - Browser:
+
+         http://localhost:8080/
