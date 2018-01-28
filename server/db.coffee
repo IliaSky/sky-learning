@@ -3,11 +3,15 @@ utils = require('./utils')
 log = utils.log
 ObjectID = require('mongodb').ObjectID
 fs = require('fs')
+setup = require('./db-setup')
+config = require('../config/db.json')
 
 _id = (x) -> if typeof x is 'string' then ObjectID(x) else x
 id  = (x) -> _id: _id(x._id)
 
-db = require('mongojs')('localhost/learning', ['announcements', 'lectures', 'tasks', 'topics', 'users', 'meetings'])
+db = require('mongojs')(config.db || 'localhost/learning', ['announcements', 'lectures', 'tasks', 'topics', 'users', 'meetings'])
+
+setup(db)
 
 schema =
   user:         {'username', 'password', 'avatar'}
@@ -99,10 +103,12 @@ avatar = (user, cb) ->
   db.users.findOne user, (err, user) ->
     if user and user.avatar
       return cb.res.send(200, new Buffer(user.avatar.slice(23), "base64"), 'image/jpeg')
-    try
-      return fs.readFile 'NoAvatar.png', (_, img) -> cb.res.send(200, img, 'image/png')
-    catch e
-    return cb.res.send(404)
+
+    return fs.readFile 'client/img/NoAvatar.png', (e, img) ->
+      if (e)
+        cb.res.send(404)
+      else
+        cb.res.send(200, img, 'image/png')
 
 changeAvatar = (user, data, cb) ->
   db.users.update id(user), {$set: avatar: data.image}, cb

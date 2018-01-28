@@ -21,18 +21,13 @@
 
 2. __Setup DB__:
 
-   - Terminal 1:
+   - Terminal:
 
          mkdir db
-         mongod --dbpath db
 
-   - Terminal 2:
+   - Optional
 
-         mongo
-         use learning
-         db.users.insert({"username" : "your_admin", "password" : "your_admin_password", "admin" : 1 })
-         db.meetings.insert({_id: ObjectId("000000000000000000000000")})
-         exit
+      Edit config/db.json
 
 3. __Enjoy__:
 
