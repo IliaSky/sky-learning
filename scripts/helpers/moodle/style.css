@@ -1,0 +1,154 @@
+#page-navbar {
+    left: 0px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+#page-navbar .breadcrumb-button {
+    position: fixed;
+    right: 20px;
+    top: 50px;
+}
+
+.availabilityinfo.ishidden {
+    display: none;
+}
+
+.block_navigation .block_tree .depth_1>ul {
+    margin: 0;
+}
+
+.block_navigation .block_tree .tree_item.branch {
+    background-size: 10px;
+    padding-left: 14px;
+}
+
+.block_navigation .block_tree ul {
+    margin-left: 10px;
+}
+
+.block_navigation [data-ajax-loader="block_navigation/nav_loader"] > li > p {
+    display: none;
+}
+
+.breadcrumb > li:first-child {
+    display: none;
+}
+
+.breadcrumb li,.breadcrumb a {
+    font-size: 13px;
+}
+
+.course-content ul.section {
+    margin: 0.5em;
+}
+
+.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+    margin: 0;
+}
+
+.editing .section .activity .contentwithoutlink, .editing .section .activity .activityinstance {
+    padding-right: 100px;
+}
+
+.langmenu {
+    display: none;
+    left: 0;
+    position: fixed;
+    text-align: center;
+}
+
+.langmenu .caret {
+    left: 15px;
+    position: absolute;
+    top: 10px;
+}
+
+.langmenu .dropdown-toggle {
+    display: inline-block;
+    font-size: 8px;
+    padding: 20px 5px 0;
+}
+
+.langmenu .dropdown-toggle:before {
+    content: '🌐';
+    font-size: 20px;
+    left: 15px;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+}
+
+.page-context-header .page-header-headings {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section .filler {
+    display: none;
+}
+
+[aria-expanded="true"].branch + ul ul {
+    display: block;
+}
+
+[aria-label="Главна"], [aria-label="Лекции"] {
+    display: inline-block;
+    vertical-align: top;
+}
+
+[aria-owns="random593e50c924fb78_group"] {
+    display: none;
+}
+
+[href*="badges/view.php"], [href*="coursecompetencies.php"] {
+    display: none;
+}
+
+a.brand {
+    display: none;
+}
+
+aside .block .content {
+    padding: 4px;
+}
+
+body {
+    -webkit-filter: invert(90%);
+    background: #333;
+    padding-top: 40px
+;
+}
+
+img {
+    -webkit-filter: invert(90%);
+}
+
+label[for="item_bigbluebuttonbn"], label[for^="item_game"], label[for="item_hotpot"], label[for="item_scorm"], label[for="item_data"], label[for="item_lti"], label[for="item_choicegroup"], label[for="item_choice"], label[for="item_attendance"], label[for="item_feedback"], label[for="item_glossary"], label[for="item_wiki"], label[for="item_lesson"], label[for="item_chat"], label[for="item_imscp"], label[for="item_recordingsbn"], label[for="item_book"], label[for="item_"], label[for="item_"], label[for="item_"] {
+    display: none;
+}
+
+li.section {
+    background: rgba(111,111,111,0.1);
+    border-radius: 20px;
+    display: inline-block;
+    margin: 5px;
+    padding: 0;
+    vertical-align: top;
+    width: calc(50% - 10px)
+;
+}
+
+li.section.current {
+    background: rgba(111,111,111,0.4);
+}
+
+x.block_navigation .block_tree .tree_item.branch {
+    padding-left: 10px;
+}
+
+x.block_navigation .block_tree ul {
+    margin-left: 10px;
+}
+

@@ -1,0 +1,482 @@
+#container {
+    box-sizing: border-box;
+    left: 0;
+    margin: 0;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+#container > footer {
+    display: none;
+}
+
+#leaderboard h1 {
+    text-align: center;
+}
+
+#leaderboard table {
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+#leaderboard td {
+    background-color: rgba(248, 233, 223,0.05);
+}
+
+#leaderboard tr.bronze td {
+    background-color: rgba(255, 23, 223,0.1);
+}
+
+#leaderboard tr.gold td {
+    background-color: rgba(248, 242, 19,0.5);
+}
+
+#leaderboard tr.silver td {
+    background-color: rgba(23, 235, 238,0.4);
+}
+
+.CodeRay .class, .function {
+    color: #268BD2;
+}
+
+.CodeRay .reserved, .keyword {
+    color: #748B00;
+}
+
+.flash {
+    background-color: #272727;
+    border-radius: 10px;
+}
+
+.flash.alert {
+    background-color: #522;
+}
+
+.logo img {
+    height: auto;
+    width: 50px;
+}
+
+.simple_form textarea[name*=body] {
+    background-attachment: scroll;
+    background-color: #222;
+    background-image: none;
+    background-position: top left;
+    background-repeat: repeat;
+    box-sizing: border-box;
+    color: #eee;
+    width: 100%;
+    xmax-width: 100%;
+}
+
+.site-footer {
+    display: none;
+}
+
+.solution table th, .solution table td {
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+}
+
+.task pre {
+    background-attachment: scroll;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: none;
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+.tip-of-the-day {
+    box-sizing: border-box;
+    float: left;
+    padding-bottom: 7px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 7px;
+    width: 60%;
+}
+
+.tip-of-the-day a {
+    background-attachment: scroll;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: none;
+    background-position: top left;
+    background-repeat: repeat;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #444 inset;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+.tip-of-the-day a:hover {
+    background-color: #111;
+}
+
+.users a {
+    background-attachment: scroll;
+    background-color: #222;
+    background-image: none;
+    background-position: top left;
+    background-repeat: repeat;
+    text-align: center;
+}
+
+.users li {
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track-piece:no-button {
+}
+
+@media  (max-width: 1222px) {
+  .slides > article.current {
+    width: 90% !important;
+    margin-left: 5% !important;
+    left: 0px !important;
+    padding: 3% 5%;
+    font-size: 24px;
+  }
+  .slide-area {
+    width: 5% !important;
+    margin: 0 !important;
+  }
+  #prev-slide-area {
+    left: 0;
+  }
+  #next-slide-area {
+    right: 0;
+    left: auto;
+  }
+}
+
+@media  (max-width: 1100px) {
+  .slides > article.current {
+    font-size: 22px;
+  }
+}
+
+@media  (max-width: 1000px) {
+  .slides > article.current {
+    font-size: 21px;
+  }
+}
+
+@media  (max-width: 900px) {
+  .slides > article.current {
+    font-size: 20px;
+  }
+}
+
+@media  (max-width: 800px) {
+  .slides > article.current {
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mobile-menu,.site-menu-button {
+    display: none !important;
+  }
+  .site-header nav, .site-menu {
+    display: block !important;
+  }
+}
+
+body > header a.logo, .site-header a.logo {
+    margin: 0;
+    text-align: center;
+    width: 20%;
+}
+
+body > header nav,.site-header nav {
+    box-sizing: border-box;
+    float: right;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 15px;
+    position: static;
+    width: 20%;
+}
+
+body > header, .site-header {
+    border: none
+;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+body > nav ul li a, nav.site-menu a {
+    border-radius: 0;
+    flex: 80px 1 0;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 10px;
+    width: auto;
+}
+
+body > nav ul li, nav.site-menu li {
+    display: contents;
+    min-width: 0px;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    text-align: center;
+}
+
+body > nav ul, nav.site-menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body header nav {
+    text-align: center;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background-color: white;
+}
+
+body>header nav li:first-child {
+    font-size: 0;
+    visibility: hidden;
+}
+
+body>header nav li:first-child a {
+    visibility: visible;
+}
+
+body>header>nav:nth-child(4) a {
+    border-radius: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    position: relative;
+    visibility: visible;
+    xbackground: rgba(222,222,222,0.85);
+    z-index: 22222;
+}
+
+body>header>nav:nth-child(4) li {
+    font-size: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    visibility: hidden;
+}
+
+body>nav, nav.site-menu {
+    left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+code {
+    display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+color, .site-content {
+    background-color: transparent;
+}
+
+color, body {
+    background-color: rgba(68, 68, 68, 0.6);
+    color: #ccc;
+    min-height: 100%;
+    xbackground: #444;
+}
+
+color,a {
+    color: #eee;
+    text-shadow: 0 0 20px #99f;
+}
+
+color,body > header,.site-header {
+    background-attachment: scroll;
+    background-color: #333;
+    background-image: none;
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+color,body>nav ul li a, nav.site-menu a {
+    -webkit-transition: all 0.3s linear;
+    background-color: rgba(99,99,99,.8);
+}
+
+color,body>nav ul li a:hover,nav.site-menu a:hover {
+    background-color: #222;
+    xbackground-color: #3371A3;
+}
+
+color,h1,h2,h3 {
+    color: #59c;
+    text-shadow: 0 0 9px #333;
+}
+
+color,html {
+    background-attachment: scroll;
+    background-color: #333;
+    background-image: url(http://www.forumrating.com/wp-content/themes/yoo_bigeasy_wp/images/background/wood_bg.jpg);
+    background-position: top left;
+    background-repeat: repeat;
+    height: 100%;
+}
+
+header {
+    opacity: 1;
+    position: relative;
+}
+
+header>h2,header>h1 {
+    display: none;
+}
+
+input {
+    border-radius: 10px;
+    outline-color: -moz-initial;
+    outline-style: none;
+    outline-width: medium;
+}
+
+input:focus {
+    box-shadow: 0 0 10px;
+}
+
+nav a[href="/"], [href="/announcements"], [href="/tips"], [href="/team"] {
+    display: none;
+}
+
+ol.topic > li.starred,ol.topic > li:nth-child(even).starred {
+    background-attachment: scroll;
+    background-color: rgba(222, 222, 222, 0.3);
+    background-image: none;
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+ol.topic > li:nth-child(even), .solution article.comment:nth-child(even),table:not([class="CodeRay"]) tr:nth-child(even) {
+    background-attachment: scroll;
+    background-color: rgba(222, 222, 222, 0.1);
+    background-image: none;
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+ol.topic>li aside {
+    position: relative;
+}
+
+ol.topic>li aside a:last-child {
+    background: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5), #000)
+;
+    border-radius: 0 0 10px 10px;
+    bottom: 0px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+    width: 100%;
+}
+
+ol.topic>li aside img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+}
+
+p.markdown-explanation {
+    width: auto;
+    xmax-width: 640px;
+}
+
+p.markdown-explanation a {
+}
+
+table.CodeRay td:first-child {
+    padding-right: 10px;
+}
+
+table.CodeRay tr {
+    background-color: #042029;
+    color: #839496;
+}
+
+table.CodeRay tr:first-child td {
+    padding-top: 10px;
+}
+
+ul.users {
+    width: auto;
+}
+
+z,#next-slide-area {
+    margin-left: 550px;
+}
+
+z,.slide-area {
+    height: 100%;
+    margin-top: 0px;
+    top: 0px;
+    width: 100px;
+}
+
+z,.slides > article.current, .slides > article li, .slides > article.current > p, .slides > article.current > div.buttons, .slides > article.current > div.code {
+    display: block;
+}
+
+z,.slides>article {
+    background: rgba(0,0,0,0.3);
+    color: #ccc;
+    height: 100%;
+    margin-top: 0px;
+    top: 0px;
+}
+
+z,.slides>article.current {
+    overflow: auto;
+}
+
