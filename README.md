@@ -12,8 +12,7 @@
 
    - Terminal:
 
-         choco install node
-         choco install mongo
+         choco install node mongo
          npm install -g coffee-script
          npm install
 
@@ -21,13 +20,9 @@
 
 2. __Setup DB__:
 
-   - Terminal:
-
-         mkdir db
-
    - Optional
 
-      Edit config/db.json
+      Edit config/db.json (default settings for the db)
 
 3. __Enjoy__:
 
