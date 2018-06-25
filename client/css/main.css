@@ -11,7 +11,7 @@
 }
 
 body {
-  background-image: url(/img/bg.jpg);
+  background: url(/img/bg.jpg) #333;
   color: #ccc;
   font-family: consolas;
   xfont-family: tahoma;
@@ -75,16 +75,24 @@ nav a {
   text-decoration: none;
   text-transform: capitalize;
 }
-
 nav a:hover {
   background: #444;
 }
-#logo-container, #welcome, #top-navi {
+#logo-container, #top-navi {
   display: inline-block;
+}
+#welcome {
+  margin: 0;
+  padding: 5px;
 }
 #top-navi {
   float:right;
   margin: 7px;
+}
+
+@media screen and (max-width: 400px) {
+  x#top-navi {float: none}
+  #welcome {display: none}
 }
 #logo-container {
   float:left;
@@ -103,6 +111,32 @@ nav a:hover {
   box-sizing:border-box;
   box-shadow: 0 0 10px 2px #000 inset;
 }
+/*#main-navi a#mobile-menu-toggle {display: none}*/
+
+time {width: 100px}
+.posts .post .meta, .meta .user {transition: all 0.2s ease-in-out;}
+
+@media screen and (max-width: 600px) {
+  #main-navi {display: block;display: flex;overflow-x: auto}
+  #main-navi a {width: 100%;flex: 1 0 20%;}
+  /*#main-navi a#mobile-menu-toggle {display: table-cell;}*/
+  /*#main-navi a#mobile-menu-toggle ~ a {display: none;}*/
+  /*#main-navi a#mobile-menu-toggle.open ~ a {display: block;}*/
+  #welcome {font-size: 1.25em;}
+  .post time {font-size: 0.8em; width: 80px}
+  .posts .post .meta, .meta .user {margin: 0; width: 96px; height: 96px;}
+  .post .content {padding: 0 10px;}
+  .post h1 {margin: 5px;}
+
+}
+@media screen and (max-width: 500px) {
+  #main-navi a {flex: 1 0 25%;}
+  .post time {font-size: 0.6em; width: 60px}
+  #welcome {font-size: 1.2em;}
+  .posts .post .meta, .meta .user {width: 64px; height: 64px;}
+}
+
+
 time{
   float: right;
 }
@@ -114,6 +148,37 @@ a{
 }
 
 /*============================ __FORMS__ ============================*/
+#error:not(:empty) {
+  margin: auto;
+  width: 400px;
+  /*width: auto;*/
+  /*display: inline-block;*/
+  padding: 10px;
+  background: rgba(200, 50, 50, 0.4);
+  color: #d44;
+  box-shadow: 0 0 10px;
+  border-radius: 10px;
+}
+
+button.edit, button.remove {
+  font-size: 0;
+}
+button.edit:before, button.remove:before {
+  font-size: 20px;
+  display: inline-block;
+  width: 25px;
+  line-height: 25px;
+}
+button.edit:before {
+  content: '✎';
+  /*content: '&#x270e;';*/
+}
+button.remove:before {
+  content: '✘';
+  color: red;
+  /*content: '&#x2718;';*/
+}
+
 form {
   text-align: center;
 }
@@ -154,11 +219,19 @@ textarea{
   padding: 5px;
   border-radius: 5px;
   xwidth:500px;
-  xheight: 200px;
+  height: 120px;
 }
 form[id^="add-"] input, form[id^="add-"] textarea{
   width: 400px;
   margin: 5px auto;
+}
+button, input[type="submit"]{
+  margin: 5px;
+  display: inline-block;
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 10px #999, 0 -2px inset;
 }
 button[id^="add-"]{
   margin: 5px auto;
@@ -173,9 +246,6 @@ button[id^="add-"]{
   box-sizing:border-box;
   box-shadow: 1px 1px;
   border-radius: 10px;
-}
-#tasks a{
-  display: block;
 }
 /*
 
@@ -219,13 +289,35 @@ button[id^="add-"]{
     opacity: 0;
 }
 /*============================ __PAGES__ ============================*/
-#lectures{
+#lectures, #tasks, #users{
   text-align:center;
 }
-#lectures a {
-  display: inline-block;
+.link-list {
   width: 80%;
+  max-width: 1000px;
+  min-width: 200px;
+  margin: auto;
+}
+.link-list li{
+  display: block;
+  position: relative;
+}
+.link-list a {
+  display: block;
+  text-align: left;
   margin: 5px;
+  margin-right: 100px;
+}
+.link-list li a:last-child {
+  margin-right: 5px;
+}
+.link-list .actions-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.actions-menu button {
+  margin: 0 5px;
 }
 .post {
   display: table;
@@ -233,6 +325,23 @@ button[id^="add-"]{
 }
 .post > * {
   display: table-cell;
+  vertical-align: top;
+}
+.post p, .post ul, .post ol {
+  margin: 10px auto;
+}
+.post .meta {
+  width: 140px;
+}
+.post li {
+  display: list-item;
+  margin-left: 25px;
+}
+.post ul li {
+  list-style-type: disc;
+}
+.post ol li {
+  list-style-type: decimal;
 }
 .content{
   padding:10px;
@@ -243,14 +352,22 @@ button[id^="add-"]{
 #topics{
   display: table;
   width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border-spacing: 0 10px;
 }
 .topic{
   display: table-row;
+  box-shadow: 0 0 1px !important;
 }
 .topic > * {
   display: table-cell;
   vertical-align: middle;
   height: 64px;
+}
+#topics a {
+  text-decoration: none;
+  padding-left: 10px;
 }
 .topic .user{
   width: 64px;
