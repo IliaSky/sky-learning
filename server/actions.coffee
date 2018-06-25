@@ -14,8 +14,6 @@ module.exports =
     register: db.register
     teamviewer: db.one('meetings')
 
-
-
     # login: (user, cb) ->
     #   db.authenticate data.user (account) -> cb('', account.user)
 
@@ -23,7 +21,7 @@ module.exports =
     profile: (user, data, cb) ->
       db.one('users') user, cb
 
-    'solution/add': (user, data, cb) ->
+    'solutions/add': (user, data, cb) ->
       db.all 'tasks', _id: data.task_id, (tasks) ->
         if tasks.length > 0 and tasks[0].available_until > new Date()
           db.add('solution') user, data, cb
