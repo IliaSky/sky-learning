@@ -12,10 +12,9 @@
     "url": "git+https://github.com/IliaSky/sky-learning.git"
   },
   "scripts": {
-    "postinstall": "mkdir db",
+    "postinstall": "mkdir db & node scripts/helpers/extract.js client/js/ace.zip",
     "dbsetup": "start mongod --dbpath db && coffee server/db-setup.coffee && npm stop",
     "prestart": "start mongod --dbpath db",
-    "prestart0": "start /B mongod --dbpath db",
     "start": "coffee server/server.coffee",
     "poststart": "mongo admin --eval \"db.shutdownServer()\"",
     "stop": "mongo admin --eval \"db.shutdownServer()\""
