@@ -1,0 +1,100 @@
+body {
+  font-family: Trebuchet MS, sans-serif;
+  line-height: 1.4em;
+  font-size: 18px;
+  background: #999;
+}
+.dark {
+  background: #333;
+  color: #ccc;
+}
+.light {
+  background: #eee;
+  color: #333;
+}
+section {
+  display: block;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+}
+#name {
+  width: 250px;
+  display: inline-block;
+  color: #69f;
+}
+#points {
+  color: limegreen;
+  font-weight: bold;
+}
+#comments {
+  text-align: left;
+  margin: 1em;
+}
+li {
+  margin: 0.5em auto;
+}
+li:empty {
+  display: none;
+}
+.label {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.label + ul {
+  margin-top: 10px;
+}
+a {
+  color: #69f;
+}
+ul {
+  padding-left: 2em;
+}
+#toggle-dark-style {
+  border: 1px solid #999;
+  border-radius: 10px;
+  line-height: 1.5em;
+  padding: 2px 4px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+@media screen and (max-width: 900px) {
+  body { font-size: 17px; }
+}
+@media screen and (max-width: 800px) {
+  body { font-size: 16px; }
+}
+@media screen and (max-width: 700px) {
+  body { font-size: 15px; }
+}
+@media screen and (max-width: 600px) {
+  body { font-size: 14px; }
+  ul { padding-left: 1em; }
+  #comments { margin: 1em 0; }
+}
+@media screen and (max-width: 480px) {
+  #toggle-dark-style {
+    position: static;
+    margin-top: 0.5em;
+  }
+}
+@media screen and (max-width: 400px) {
+  #hw-id, #name, #points {
+    display: block;
+    width: auto;
+    margin: 0.5em auto;
+  }
+}
+script+div {
+    display: none !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    transform: scale(0) !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    z-index: -1 !important;
+}
