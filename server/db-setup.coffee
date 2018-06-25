@@ -23,12 +23,15 @@ addAdmin = (db, config) ->
     username: config.username,
     password: config.password,
     admin: 1,
-    (err, data) -> console.log(err || '  Admin account created')
+    (err, data) ->
+      console.log(err || '  Admin account created')
+      checkIfDone(admin: data) if !err
 
 addMeeting = (db) ->
   # console.log('Meeting not found in database.')
   db.meetings.insert _id: ObjectID("000000000000000000000000"), id: 'm55-555-555', (err, data) ->
     console.log(err) if err
+    checkIfDone(meeting: data) if !err
     # console.log(err || '  Meeting added')
 
 setupAdmin = (db) ->
@@ -41,19 +44,37 @@ setupAdmin = (db) ->
     console.log('Creating admin using credentials from config/db.json.')
     addAdmin db, config
 
+found = {}
+
+checkIfDone = (obj) ->
+  ['meeting', 'admin'].forEach (name) ->
+    found[name] ?= obj[name]
+
+  # console.log(found) if require.main == module
+
+  process.exit() if found.meeting && found.admin && require.main == module
+
 setup = (db) ->
+
   db.users.findOne admin: 1, (err, admin) ->
     console.log(err) if err
+
     setupAdmin(db) if !admin
+
+    checkIfDone {admin}
+
 
   db.meetings.findOne {}, (err, meeting) ->
     console.log(err) if err
+
+    checkIfDone {meeting}
+
     addMeeting(db) if !meeting
 
 module.exports = setup
 
 if require.main == module
-  spawn = require('child_process').spawn;
+  # spawn = require('child_process').spawn;
 
   db = require('mongojs')(config.db || 'localhost/learning')
   setup(db)
