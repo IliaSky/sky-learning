@@ -8,7 +8,8 @@ connect = {
   cookieParser: require('cookie-parser'),
   session: require('express-session'),
   urlencoded: bodyParser.urlencoded,
-  json: bodyParser.json
+  json: bodyParser.json,
+  compression: require('compression')
 }
 db      = require('./db')
 utils   = require('./utils')
@@ -56,6 +57,7 @@ require('http').createServer(
       res.setHeader 'Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'
       next();
     )
+    .use(connect.compression())
     .use(connect.static 'client')
     .use(connect.logger 'dev')
     .use(connect.cookieParser())
@@ -69,5 +71,4 @@ require('http').createServer(
         log err.stack
 ).listen 8080
 
-log 'Welcome to SkyLearning'.cyan
-
+log 'SkyLearning running on localhost:8080'.cyan
